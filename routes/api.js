@@ -2,7 +2,7 @@ var express = require('express');
 var registry = require('../registry/commands');
 var router = express.Router();
 var kafka = require('../lib/kafka');
-var kafka_producer = kafka.getInstance().producer();
+var kafka_producer = kafka.getInstance();
 
 router.post('/commands', function (req, res) {
     console.log("Received command: " + JSON.stringify(req.body))
